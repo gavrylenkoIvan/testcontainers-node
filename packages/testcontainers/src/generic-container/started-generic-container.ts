@@ -23,7 +23,7 @@ export class StartedGenericContainer implements StartedTestContainer {
     private boundPorts: BoundPorts,
     private readonly name: string,
     private readonly waitStrategy: WaitStrategy,
-    private readonly isReused: boolean
+    private readonly isReused: boolean = false
   ) {}
 
   protected containerIsStopping?(): Promise<void>;
