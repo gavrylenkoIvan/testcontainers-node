@@ -142,7 +142,8 @@ export class GenericContainer implements TestContainer {
       inspectResult,
       boundPorts,
       inspectResult.Name,
-      this.waitStrategy
+      this.waitStrategy,
+      true
     );
   }
 
@@ -206,7 +207,8 @@ export class GenericContainer implements TestContainer {
       inspectResult,
       boundPorts,
       inspectResult.Name,
-      this.waitStrategy
+      this.waitStrategy,
+      false
     );
 
     if (this.containerStarted) {

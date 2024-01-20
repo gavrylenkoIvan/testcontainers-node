@@ -22,7 +22,8 @@ export class StartedGenericContainer implements StartedTestContainer {
     private inspectResult: ContainerInspectInfo,
     private boundPorts: BoundPorts,
     private readonly name: string,
-    private readonly waitStrategy: WaitStrategy
+    private readonly waitStrategy: WaitStrategy,
+    private readonly isReused: boolean
   ) {}
 
   protected containerIsStopping?(): Promise<void>;
@@ -119,6 +120,10 @@ export class StartedGenericContainer implements StartedTestContainer {
 
   public getIpAddress(networkName: string): string {
     return this.getNetworkSettings()[networkName].ipAddress;
+  }
+
+  public getIsReused(): boolean {
+    return this.isReused;
   }
 
   private getNetworkSettings() {

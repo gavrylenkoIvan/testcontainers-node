@@ -54,7 +54,7 @@ export async function getContainerRuntimeClient(): Promise<ContainerRuntimeClien
         containerRuntimeClient = client;
         return client;
       }
-    } catch {
+    } catch (e) {
       log.debug(`Container runtime strategy "${strategy.getName()}" does not work`);
     }
   }

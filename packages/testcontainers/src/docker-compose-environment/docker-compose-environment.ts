@@ -163,7 +163,8 @@ export class DockerComposeEnvironment {
             inspectResult,
             boundPorts,
             containerName,
-            waitStrategy
+            waitStrategy,
+            false
           );
         })
       )
